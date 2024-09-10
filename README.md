@@ -20,9 +20,30 @@ stored.
 P
 ## PROGRAM - ARP
 ### CLIENT.PY:
-![image](https://github.com/user-attachments/assets/5831309f-2c78-4e39-a40d-1a655daca1e9)
+~~~
+import socket
+s=socket.socket()
+s.bind(('localhost',8000))
+s.listen(5)
+c,addr=s.accept()
+address={"165.165.80.80":"6A:08:AA:C2","165.165.79.1":"8A:BC:E3:FA"};
+while True:
+    ip=c.recv(1024).decode()
+    try:
+     c.send(address[ip].encode())
+    except KeyError:
+     c.send("Not Found".encode())
+~~~
 ### SERVER.PY:
-![image](https://github.com/user-attachments/assets/aae305fa-3821-453b-8bce-63079663326b)
+~~~
+import socket
+s=socket.socket()
+s.connect(('localhost',8000))
+while True:
+    ip=input("Enter logical Address : ")
+    s.send(ip.encode())
+    print("MAC Address",s.recv(1024).decode())
+~~~
 
 ## OUTPUT - ARP
 ### CLIENT.PY:
@@ -32,10 +53,30 @@ P
 
 ## PROGRAM - RARP
 ### CLIENT.PY:
-![image](https://github.com/user-attachments/assets/200360b4-18ed-4ef2-bb01-cb8da7dccb6b)
+~~~
+import socket
+s=socket.socket()
+s.bind(('localhost',9000))
+s.listen(5)
+c,addr=s.accept()
+address={"6A:08:AA:C2":"192.168.1.100","8A:BC:E3:FA":"192.168.1.99"};
+while True:
+ ip=c.recv(1024).decode()
+ try:
+    c.send(address[ip].encode())
+ except KeyError:
+    c.send("Not Found".encode())
+~~~
 ### SERVER.PY:
-![image](https://github.com/user-attachments/assets/2d61f669-5350-455a-b9cd-b9739cab71d0)
-
+~~~
+import socket
+s=socket.socket()
+s.connect(('localhost',9000))
+while True:
+ ip=input("Enter MAC Address : ")
+ s.send(ip.encode())
+ print("Logical Address",s.recv(1024).decode())
+~~~
 ## OUTPUT -RARP
 ### CLIENT.PY:
 ![image](https://github.com/user-attachments/assets/cb783493-8eba-4ae8-99a8-39420e0b0ff9)
