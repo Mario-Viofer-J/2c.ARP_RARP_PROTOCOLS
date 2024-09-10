@@ -1,14 +1,16 @@
 # 2c.SIMULATING ARP /RARP PROTOCOLS
+### NAME : MARIO VIOFER J
+### REG.NO : 212223100032
 ## AIM
 To write a python program for simulating ARP protocols using TCP.
 ## ALGORITHM:
-## Client:
+### Client:
 1. Start the program
 2. Using socket connection is established between client and server.
 3. Get the IP address to be converted into MAC address.
 4. Send this IP address to server.
 5. Server returns the MAC address to client.
-## Server:
+### Server:
 1. Start the program
 2. Accept the socket which is created by the client.
 3. Server maintains the table in which IP and corresponding MAC addresses are
@@ -17,9 +19,29 @@ stored.
 5. Map the IP address with its MAC address and return the MAC address to client.
 P
 ## PROGRAM - ARP
-## OUPUT - ARP
+### CLIENT.PY:
+![image](https://github.com/user-attachments/assets/5831309f-2c78-4e39-a40d-1a655daca1e9)
+### SERVER.PY:
+![image](https://github.com/user-attachments/assets/aae305fa-3821-453b-8bce-63079663326b)
+
+## OUTPUT - ARP
+### CLIENT.PY:
+![image](https://github.com/user-attachments/assets/1389abd6-4959-4a89-8b85-bd8694ab0e9f)
+### SERVER.PY:
+![image](https://github.com/user-attachments/assets/000f1075-92ac-4735-b181-0fd5023c14c6)
+
 ## PROGRAM - RARP
-## OUPUT -RARP
+### CLIENT.PY:
+![image](https://github.com/user-attachments/assets/200360b4-18ed-4ef2-bb01-cb8da7dccb6b)
+### SERVER.PY:
+![image](https://github.com/user-attachments/assets/2d61f669-5350-455a-b9cd-b9739cab71d0)
+
+## OUTPUT -RARP
+### CLIENT.PY:
+![image](https://github.com/user-attachments/assets/cb783493-8eba-4ae8-99a8-39420e0b0ff9)
+### SERVER.PY:
+![image](https://github.com/user-attachments/assets/d76b2534-877b-4bdf-aeed-f2d728474875)
+
 ## RESULT
 Thus, the python program for simulating ARP protocols using TCP was successfully 
 executed.
